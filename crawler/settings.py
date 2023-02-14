@@ -1,19 +1,19 @@
-# Scrapy settings for scrappy_mapped project
+# Scrapy settings for crawler project
 
 LOG_LEVEL = 'INFO'
 
-BOT_NAME = "scrappy_mapped"
+BOT_NAME = "web_crawler"
 
-SPIDER_MODULES = ["scrappy_mapped.spiders"]
-NEWSPIDER_MODULE = "scrappy_mapped.spiders"
+SPIDER_MODULES = ["crawler.spiders"]
+NEWSPIDER_MODULE = "crawler.spiders"
 
 DEPTH_LIMIT = 1
 
 ROBOTSTXT_OBEY = True
 
 ITEM_PIPELINES = {
-    "scrappy_mapped.pipelines.GetDomainPipeline": 500,
-    "scrappy_mapped.pipelines.ExportItemsPipeline": 900,
+    "crawler.pipelines.GetDomainPipeline": 500,
+    "crawler.pipelines.ExportItemsPipeline": 900,
 }
 
 # Set settings whose default value is deprecated to a future-proof value

@@ -2,7 +2,7 @@ import socket
 from urllib.parse import urlparse
 from pydispatch import dispatcher
 from scrapy import signals
-from scrappy_mapped.item_export import JsonLItemExporter
+from crawler.item_export import JsonLItemExporter
 
 
 class GetDomainPipeline:

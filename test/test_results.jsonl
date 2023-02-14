@@ -1,0 +1,15 @@
+{
+  "domain": "website.com",
+  "linked_to": [
+    "1.1.1.1",
+    "2.2.2.2"
+  ],
+  "address": "1.2.3.4"
+}
+{
+  "domain": "website2.com",
+  "linked_to": [
+    "0.0.0.0"
+  ],
+  "address": "1.1.1.1"
+}

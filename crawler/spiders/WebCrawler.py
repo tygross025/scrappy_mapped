@@ -1,7 +1,7 @@
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from scrapy.http import Request
-from scrappy_mapped.items import Website
+from crawler.items import Website
 
 
 class WebCrawler(CrawlSpider):
