@@ -26,7 +26,7 @@ def test_build_ip_locations():
     with patch('map.ip_location.get_ipinfo') as mock_get_ip_info:
         mock_handler = MockHandler(True)
         mock_get_ip_info.return_value = mock_handler.getBatchDetails(parsed_file.keys())
-        locations = IPLocations.get_ip_locations(file)
+        locations = get_ip_locations(file)
     assert locations == expected_output
 
 
