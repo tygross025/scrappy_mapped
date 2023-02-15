@@ -32,7 +32,6 @@ def get_ip_locations(file) -> set:
 
 def get_ipinfo(ips) -> dict:
     """Sends batch request to ipinfo api"""
-    print("Here")
     access_token = os.environ['IPINFO_ACCESS_TOKEN']
     handler = ipinfo.getHandler(access_token)
     details = handler.getBatchDetails(ips)
