@@ -1,2 +1,3 @@
-{"domain": "website.com","linked_to": ["1.1.1.1","2.2.2.2"],"address": "1.2.3.4"}
+{"domain": "website.com","linked_to": ["1.1.1.1", "2.2.2.2"],"address": "1.2.3.4"}
 {"domain": "website2.com","linked_to": ["0.0.0.0"],"address": "1.1.1.1"}
+{"domain":  "website3.com", "linked_to":  ["0.0.0.0"], "address":  "2.2.2.2"}
