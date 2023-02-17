@@ -1,10 +1,9 @@
 from unittest.mock import patch
 import pytest
-
 from map.ip_location import *
 
 
-def test_build_ip_locations():
+def test_get_ip_locations():
     expected_output = {
         IPLocation(
             address='1.2.3.4',
@@ -19,13 +18,20 @@ def test_build_ip_locations():
             links_to=['0.0.0.0'],
             lat=0.0,
             long=0.0
-        )
+        ),
+        IPLocation(
+            address='2.2.2.2',
+            domain='website3.com',
+            links_to=['0.0.0.0'],
+            lat=0.0,
+            long=0.0
+        ),
     }
     file = './test/test_results.jsonl'
     parsed_file = parse_file_data(file)
     with patch('map.ip_location.get_ipinfo') as mock_get_ip_info:
         mock_handler = MockHandler(True)
-        mock_get_ip_info.return_value = mock_handler.getBatchDetails(parsed_file.keys())
+        mock_get_ip_info.return_value = mock_handler.getBatchDetails([i['address'] for i in parsed_file.values()])
         locations = get_ip_locations(file)
     assert locations == expected_output
 
@@ -33,8 +39,9 @@ def test_build_ip_locations():
 def test_parse_file_data():
     # expected_output based on test_results.jsonl file
     expected_output = {
-        '1.2.3.4': {'domain': 'website.com', 'linked_to': ["1.1.1.1", "2.2.2.2"]},
-        '1.1.1.1': {'domain': 'website2.com', 'linked_to': ["0.0.0.0"]}
+        'website.com': {'address': '1.2.3.4', 'linked_to': ['1.1.1.1', '2.2.2.2']},
+        'website2.com': {'address': '1.1.1.1', 'linked_to': ['0.0.0.0']},
+        'website3.com': {'address': '2.2.2.2', 'linked_to': ['0.0.0.0']}
     }
     file = './test/test_results.jsonl'
     parsed_file = parse_file_data(file)
