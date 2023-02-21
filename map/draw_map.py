@@ -31,10 +31,6 @@ def get_locations(jsonl_file_path) -> set:
     return locations
 
 
-def run_draw_map():
-    draw_map('/Users/tygross/PycharmProjects/scrappy_mapped/exported_results.jsonl')
-
-
 def add_location_circle(location_map, location):
     """Adds a circle marking a given location onto the given map"""
     title = ', '.join([i.domain for i in location.ip_locations])
@@ -70,3 +66,4 @@ def draw_map(jsonl_file_path):
         add_location_circle(location_map, location)
 
     location_map.save('map.html')
+
