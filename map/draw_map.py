@@ -1,20 +1,20 @@
 import folium
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from map.ip_location import get_ip_locations
 
 
-@dataclass
+@dataclass(frozen=True, eq=True)
 class Location:
     """Data representation of location to be plotted on map"""
     lat: float
     long: float
-    ip_locations: set
+    ip_locations: set = field(hash=False)
 
 
-def get_locations(jsonl_file_path) -> list:
+def get_locations(jsonl_file_path) -> set:
     """Returns a list of Location elements based on addresses in jsonl file."""
     ip_info = get_ip_locations(jsonl_file_path)
-    locations = list()
+    locations = set()
     for ip_location in ip_info:
         is_new_location = True
         for location in locations:
@@ -23,7 +23,7 @@ def get_locations(jsonl_file_path) -> list:
                 is_new_location = False
                 break
         if is_new_location:
-            locations.append(Location(
+            locations.add(Location(
                 lat=ip_location.lat,
                 long=ip_location.long,
                 ip_locations={ip_location}
