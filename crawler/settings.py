@@ -1,6 +1,6 @@
 # Scrapy settings for crawler project
 
-LOG_LEVEL = 'INFO'
+LOG_LEVEL = 'DEBUG'
 
 BOT_NAME = "web_crawler"
 

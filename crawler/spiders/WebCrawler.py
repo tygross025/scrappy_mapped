@@ -6,7 +6,7 @@ from crawler.items import Website
 
 class WebCrawler(CrawlSpider):
     name = 'web_crawler'
-    start_urls = ['https://docs.scrapy.org/en/latest/topics/spiders.html']
+    start_urls = None
 
     rules = (
         Rule(LinkExtractor(), callback='parse_item'),
