@@ -8,7 +8,8 @@ A web crawler that maps the locations of crawled ips.
 Example output
 -------------
 map.html
-<img width="1564" alt="Screenshot 2023-02-21 at 9 51 03 AM" src="https://user-images.githubusercontent.com/31942911/220394138-6a97fa46-39c3-48c0-a032-ca377e6cbda2.png">
+<img width="1200" alt="Screenshot 2023-02-21 at 10 05 41 AM" src="https://user-images.githubusercontent.com/31942911/220397560-92dbae70-f589-49bd-8944-7ca4666d2c34.png">
+
 
 
 How to run
